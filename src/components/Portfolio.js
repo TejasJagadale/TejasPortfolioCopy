@@ -53,7 +53,7 @@ export default function Portfolio() {
       {
         id: 4,
         title: "Erode Book Festival",
-        tags: ["AWS", "Cost Saving"],
+        tags: ["React", "CSS"],
         category: "Infra",
         desc: "Developed a Portfolio website for an Erode Book Festival.",
         year: 2025,
@@ -62,7 +62,7 @@ export default function Portfolio() {
       {
         id: 5,
         title: "TStalin Gunasekaran",
-        tags: ["React", "Next.js"],
+        tags: ["React", "CSS"],
         category: "Web",
         desc: "Developed a Portfolio website for an TStalin Gunasekaran.,Lawyer.,Writer.",
         year: 2025,
@@ -72,7 +72,7 @@ export default function Portfolio() {
         id: 6,
         title: "Automated Email Reporting System",
         tags: ["Node.js", "Automation"],
-        category: "Web",
+        category: "Backend",
         desc: "Implemented automated email functionality to send reports directly to clients, reducing manual efforts by 90%.",
         year: 2024,
         link: "#"
@@ -199,7 +199,7 @@ export default function Portfolio() {
       links.forEach((link) => link.removeEventListener("click", () => {}));
   }, []);
 
-  // const categories = ["All", "Web"];
+  const categories = ["All", "Web", "Backend"];
 
   return (
     <div
