@@ -427,7 +427,7 @@ export default function Portfolio() {
             { name: "ReactJS / NextJS", level: 85 },
             { name: "Node.js / API Design", level: 80 },
             { name: "JavaScript", level: 90 },
-            { name: "HTML / CSS", level: 95 },
+            { name: "HTML / CSS", level: 95 }
             // { name: "AWS / GCP", level: 75 }
           ].map((s, i) => (
             <div key={i} className="col col-6 col-md-12">
@@ -489,8 +489,7 @@ export default function Portfolio() {
           <h2 className="col">Projects</h2>
           <div className="col col-6 col-md-12 text-right">
             <div className="row g-2 align-center">
-              <div className="col">
-              </div>
+              <div className="col"></div>
               <div className="col">
                 <input
                   id="projectSearch"
@@ -631,52 +630,54 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="footer container-xl">
-        <div className="col text-right flex items-center gap-3">
-          {/* Social Media Icons */}
-          <div className="social-icons d-inline-flex">
-            <a
-              href="https://www.linkedin.com/in/tejas-jagadale43?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="linkedin"
-            >
-              <FaLinkedin size={20} />
-            </a>
-            <a
-              href="https://youtube.com/@tejasjagdale?si=_VK2HQ3_wwheU8bs"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="youtube"
-            >
-              <FaYoutube size={20} />
-            </a>
-            <a
-              href="https://www.instagram.com/tejas__verse?utm_source=qr&igsh=MWFzaXNleTdkcnc2bA=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="instagram"
-            >
-              <FaInstagram size={20} />
-            </a>
-            <a
-              href="https://x.com/TejasJagad83787?t=Hw75CHA2rw_NCUE_xWS8dQ&s=08 "
-              target="_blank"
-              rel="noopener noreferrer"
-              className="twitter"
-            >
-              <FaTwitter size={20} />
-            </a>
+      <footer className="footer">
+        <div className="container-xl footer1">
+          <div className="col text-right flex items-center gap-3">
+            {/* Social Media Icons */}
+            <div className="social-icons d-inline-flex">
+              <a
+                href="https://www.linkedin.com/in/tejas-jagadale43?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="linkedin"
+              >
+                <FaLinkedin size={20} />
+              </a>
+              <a
+                href="https://youtube.com/@tejasjagdale?si=_VK2HQ3_wwheU8bs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="youtube"
+              >
+                <FaYoutube size={20} />
+              </a>
+              <a
+                href="https://www.instagram.com/tejas__verse?utm_source=qr&igsh=MWFzaXNleTdkcnc2bA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="instagram"
+              >
+                <FaInstagram size={20} />
+              </a>
+              <a
+                href="https://x.com/TejasJagad83787?t=Hw75CHA2rw_NCUE_xWS8dQ&s=08 "
+                target="_blank"
+                rel="noopener noreferrer"
+                className="twitter"
+              >
+                <FaTwitter size={20} />
+              </a>
+            </div>
           </div>
-        </div>
 
-        {/* Accent color picker */}
-        <input
-          type="color"
-          value={accent}
-          onChange={(e) => setAccent(e.target.value)}
-          aria-label="Choose accent color"
-        />
+          {/* Accent color picker */}
+          <input
+            type="color"
+            value={accent}
+            onChange={(e) => setAccent(e.target.value)}
+            aria-label="Choose accent color"
+          />
+        </div>
       </footer>
 
       {/* Command Palette */}
