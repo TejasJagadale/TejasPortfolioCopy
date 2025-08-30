@@ -1025,6 +1025,7 @@ p {
   .container-xl {
     padding: 1rem;
     margin-top: 0rem;
+    max-width: 100% !important ;
   }
 
   .mobile-menu-toggle {
@@ -1102,6 +1103,7 @@ p {
   .educ {
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
 
   .condact {
@@ -1186,6 +1188,7 @@ p {
   .hero {
     padding: 1rem;
     text-align: left;
+    width: 100% !important;
   }
 
   .cta-row {
