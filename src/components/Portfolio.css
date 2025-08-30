@@ -1018,6 +1018,9 @@ p {
     position: relative;
     padding-left: 1rem;
     margin-bottom: 0.5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
   }
   .bg-blobs {
     display: none;
