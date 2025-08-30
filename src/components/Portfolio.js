@@ -274,8 +274,8 @@ export default function Portfolio() {
             applications using React, Node.js, and cloud platforms.
           </p>
           <div className="cta-row">
-            <a href="#projects" className="btn btn-lg btn-primary">
-              View Projects
+            <a href="/pdf/TejasResume.pdf" className="btn btn-lg btn-primary">
+              View Resume
             </a>
             <a href="#contact" className="btn btn-lg btn-outline">
               Hire Me
