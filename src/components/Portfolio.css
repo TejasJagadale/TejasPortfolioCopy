@@ -865,6 +865,8 @@ p {
   /* margin-top: 2rem; */
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 999999;
 }
 
 .footer1 {
