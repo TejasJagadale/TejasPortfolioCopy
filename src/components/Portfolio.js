@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { FaLinkedin, FaYoutube, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./Portfolio.css";
 
@@ -8,7 +8,7 @@ export default function Portfolio() {
   const [dark, setDark] = useState(true);
 
   // Project filtering and search
-  // const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState("All");
   const [query, setQuery] = useState("");
 
   // Command Palette (⌘/Ctrl + K)
@@ -21,80 +21,80 @@ export default function Portfolio() {
   // Animation control
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // const projects = useMemo(
-  //   () => [
-  //     {
-  //       id: 1,
-  //       title: "MPeoples Business Solutions Private Limited",
-  //       tags: ["React", "CSS"],
-  //       category: "Web",
-  //       desc: "Developed Responsive web application for the currently working company.",
-  //       year: 2025,
-  //       link: "https://mpeoples.in/"
-  //     },
-  //     {
-  //       id: 2,
-  //       title: "Today Talks",
-  //       tags: ["Node.js", "React", "MongoDb"],
-  //       category: "Web",
-  //       desc: "Developed a news Website 'TodayTalks' includin Adsense.",
-  //       year: 2025,
-  //       link: "https://todaytalks.in/"
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "Makkal Sinthanai Peravai",
-  //       tags: ["React", "CSS"],
-  //       category: "Web",
-  //       desc: "Developed a Portfolio website for an Organisation.",
-  //       year: 2025,
-  //       link: "https://www.makkalsinthanaiperavai.com/"
-  //     },
-  //     {
-  //       id: 4,
-  //       title: "Erode Book Festival",
-  //       tags: ["React", "CSS"],
-  //       category: "Infra",
-  //       desc: "Developed a Portfolio website for an Erode Book Festival.",
-  //       year: 2025,
-  //       link: "https://erodebookfestival.in/"
-  //     },
-  //     {
-  //       id: 5,
-  //       title: "TStalin Gunasekaran",
-  //       tags: ["React", "CSS"],
-  //       category: "Web",
-  //       desc: "Developed a Portfolio website for an TStalin Gunasekaran.,Lawyer.,Writer.",
-  //       year: 2025,
-  //       link: "https://tstalingunasekaran.in/"
-  //     },
-  //     {
-  //       id: 6,
-  //       title: "Automated Email Reporting System",
-  //       tags: ["Node.js", "Automation"],
-  //       category: "Backend",
-  //       desc: "Implemented automated email functionality to send reports directly to clients, reducing manual efforts by 90%.",
-  //       year: 2024,
-  //       link: "#"
-  //     }
-  //   ],
-  //   []
-  // );
+  const projects = useMemo(
+    () => [
+      {
+        id: 1,
+        title: "MPeoples Business Solutions Private Limited",
+        tags: ["React", "CSS"],
+        category: "Web",
+        desc: "Developed Responsive web application for the currently working company.",
+        year: 2025,
+        link: "https://mpeoples.in/"
+      },
+      {
+        id: 2,
+        title: "Today Talks",
+        tags: ["Node.js", "React", "MongoDb"],
+        category: "Web",
+        desc: "Developed a news Website 'TodayTalks' includin Adsense.",
+        year: 2025,
+        link: "https://todaytalks.in/"
+      },
+      {
+        id: 3,
+        title: "Makkal Sinthanai Peravai",
+        tags: ["React", "CSS"],
+        category: "Web",
+        desc: "Developed a Portfolio website for an Organisation.",
+        year: 2025,
+        link: "https://www.makkalsinthanaiperavai.com/"
+      },
+      {
+        id: 4,
+        title: "Erode Book Festival",
+        tags: ["React", "CSS"],
+        category: "Infra",
+        desc: "Developed a Portfolio website for an Erode Book Festival.",
+        year: 2025,
+        link: "https://erodebookfestival.in/"
+      },
+      {
+        id: 5,
+        title: "TStalin Gunasekaran",
+        tags: ["React", "CSS"],
+        category: "Web",
+        desc: "Developed a Portfolio website for an TStalin Gunasekaran.,Lawyer.,Writer.",
+        year: 2025,
+        link: "https://tstalingunasekaran.in/"
+      },
+      {
+        id: 6,
+        title: "Automated Email Reporting System",
+        tags: ["Node.js", "Automation"],
+        category: "Backend",
+        desc: "Implemented automated email functionality to send reports directly to clients, reducing manual efforts by 90%.",
+        year: 2024,
+        link: "#"
+      }
+    ],
+    []
+  );
 
-  // const filtered = useMemo(() => {
-  //   const byCat =
-  //     category === "All"
-  //       ? projects
-  //       : projects.filter((p) => p.category === category);
-  //   const q = query.trim().toLowerCase();
-  //   return q
-  //     ? byCat.filter((p) =>
-  //         (p.title + " " + p.desc + " " + p.tags.join(" "))
-  //           .toLowerCase()
-  //           .includes(q)
-  //       )
-  //     : byCat;
-  // }, [ query, projects]);
+  const filtered = useMemo(() => {
+    const byCat =
+      category === "All"
+        ? projects
+        : projects.filter((p) => p.category === category);
+    const q = query.trim().toLowerCase();
+    return q
+      ? byCat.filter((p) =>
+          (p.title + " " + p.desc + " " + p.tags.join(" "))
+            .toLowerCase()
+            .includes(q)
+        )
+      : byCat;
+  }, [category, query, projects]);
 
   // Set loaded state after initial render
   useEffect(() => {
@@ -206,7 +206,6 @@ export default function Portfolio() {
       className={`site ${dark ? "theme-dark" : "theme-light"} ${
         isLoaded ? "loaded" : ""
       }`}
-      // style={{ ["--accent"]: accent }}
     >
       {/* Animated background blobs */}
       <div className="bg-blobs" aria-hidden>
@@ -503,7 +502,31 @@ export default function Portfolio() {
           </div>
         </div>
 
-
+        <div className="grid">
+          {filtered.map((p) => (
+            <a
+              key={p.id}
+              href={p.link}
+              className="card project tilt"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="project-top">
+                <span className="badge soft">{p.category}</span>
+                <span className="muted">{p.year}</span>
+              </div>
+              <h3>{p.title}</h3>
+              <p className="muted">{p.desc}</p>
+              <div className="tag-row">
+                {p.tags.map((t) => (
+                  <span key={t} className="tag">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
 
       {/* Education & Certifications */}
